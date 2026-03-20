@@ -1,11 +1,8 @@
-<div align="center">
+# BoneHub Website
 
-# ✨[**Public Datasets**](https://bonehub.github.io/Public-Datasets)✨
+Minimal website repository for BoneHub, served with GitHub Pages from the `docs/` folder.
 
-</div>
+## Live Links
 
-<div align="center">
-
-# ✨[**BoneHub Dataset**](https://bonehub.github.io/BoneHub-Dataset)✨
-
-</div>
+- Public Datasets: https://bonehub.github.io/Public-Datasets
+- BoneHub Dataset: https://bonehub.github.io/BoneHub-Dataset

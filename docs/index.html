@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BoneHub</title>
+    <meta name="description" content="BoneHub: A Hub for Providing Large-Scale Population-Based 3D Bone Shapes" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="skeleton-bg" aria-hidden="true">
+        <img src="skeleton.png" alt="" />
+    </div>
+    <div class="background-shape shape-a" aria-hidden="true"></div>
+    <div class="background-shape shape-b" aria-hidden="true"></div>
+
+    <main class="layout">
+        <div class="topbar" aria-label="Site branding">
+            <img class="site-logo" src="logo.png" alt="BoneHub logo" />
+        </div>
+
+        <header class="hero">
+            <p class="eyebrow">Welcome to</p>
+            <h1>BoneHub</h1>
+            <p class="lead">
+                A Hub for Providing Large-Scale Population-Based 3D Bone Shapes
+            </p>
+        </header>
+
+        <section class="cards" aria-label="Dataset links">
+            <a class="card" href="https://bonehub.github.io/Public-Datasets" target="_blank" rel="noopener noreferrer">
+                <p class="card-label">Published Collection</p>
+                <h2>Public Datasets</h2>
+                <p>A guide for finding 3D bone shapes and medical image datasets.</p>
+                <span class="arrow" aria-hidden="true">&#8599;</span>
+            </a>
+
+            <a class="card" href="https://bonehub.github.io/BoneHub-Dataset" target="_blank" rel="noopener noreferrer">
+                <p class="card-label">Ongoing Development</p>
+                <h2>BoneHub Dataset</h2>
+                <p>A comprehensive, harmonized dataset for 3D bone shapes, medical images, and related metadata,
+                    generated from public datasets, designed for biomedical research.</p>
+                <span class="arrow" aria-hidden="true">&#8599;</span>
+            </a>
+        </section>
+    </main>
+</body>
+
+</html>
