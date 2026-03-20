@@ -1,9 +1,9 @@
-# BoneHub Website
+<div align="center">
 
-Minimal website repository for BoneHub, served with GitHub Pages from the `docs/` folder.
+# BoneHub
 
-## Live Links
+### A Hub for Providing Large-Scale Population-Based 3D Bone Shapes
 
-- BoneHub: https://bonehub.github.io
-- Public Datasets: https://bonehub.github.io/Public-Datasets
-- BoneHub Dataset: https://bonehub.github.io/BoneHub-Dataset
+[![Visit BoneHub](https://img.shields.io/badge/Visit-BoneHub-007f73?style=for-the-badge)](https://bonehub.github.io)
+
+</div>
