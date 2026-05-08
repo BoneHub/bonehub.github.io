@@ -28,10 +28,13 @@ body {
     radial-gradient(circle at 62% 28%, rgba(122, 165, 214, 0.14), transparent 42%),
     linear-gradient(150deg, var(--bg-0), var(--bg-1));
   background-attachment: fixed;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   overflow-x: hidden;
+  overflow-y: auto;
   isolation: isolate;
 }
 
@@ -86,7 +89,7 @@ body {
   position: relative;
   z-index: 1;
   width: min(960px, 92vw);
-  max-height: 100dvh;
+  min-height: 100dvh;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -95,8 +98,7 @@ body {
   border: 1px solid var(--panel-edge);
   backdrop-filter: none;
   box-shadow: 0 14px 28px rgba(15, 26, 30, 0.12);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 .layout::before {
@@ -336,7 +338,7 @@ h2 {
   .layout {
     padding: 16px;
     border-radius: 20px;
-    max-height: calc(100dvh - 16px);
+    min-height: auto;
   }
 
   .topbar {
@@ -494,7 +496,6 @@ h2 {
 /* Landscape orientation on mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .layout {
-    max-height: 100dvh;
     padding: 8px 12px;
   }
 
