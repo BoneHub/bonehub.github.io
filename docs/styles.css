@@ -18,7 +18,8 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: "Sora", sans-serif;
   color: var(--ink);
   background:
@@ -26,9 +27,11 @@ body {
     radial-gradient(circle at 86% 90%, rgba(241, 162, 74, 0.22), transparent 34%),
     radial-gradient(circle at 62% 28%, rgba(122, 165, 214, 0.14), transparent 42%),
     linear-gradient(150deg, var(--bg-0), var(--bg-1));
+  background-attachment: fixed;
   display: grid;
   place-items: center;
-  overflow: hidden;
+  padding: 12px;
+  overflow-x: hidden;
   isolation: isolate;
 }
 
@@ -83,16 +86,17 @@ body {
   position: relative;
   z-index: 1;
   width: min(960px, 92vw);
-  min-height: 94vh;
-  padding: 24px 30px 16px;
+  max-height: 100dvh;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  border-radius: 26px;
+  border-radius: 24px;
   background: var(--panel);
   border: 1px solid var(--panel-edge);
   backdrop-filter: none;
   box-shadow: 0 14px 28px rgba(15, 26, 30, 0.12);
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .layout::before {
@@ -164,14 +168,15 @@ h1 {
   border: 1px solid var(--card-border);
   background: var(--card);
   backdrop-filter: blur(1px);
-  border-radius: 20px;
-  padding: 22px 24px 22px;
-  min-height: 198px;
+  border-radius: 16px;
+  padding: 20px;
+  min-height: 160px;
   display: grid;
   gap: 8px;
   overflow: hidden;
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
   animation: rise 600ms ease-out both;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card::before {
@@ -258,15 +263,20 @@ h2 {
 .repo-link {
   text-decoration: none;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #18393b;
   border: 1px solid rgba(16, 34, 38, 0.2);
   background: rgba(255, 255, 255, 0.5);
-  padding: 9px 13px;
+  padding: 10px 14px;
   border-radius: 999px;
   transition: border-color 200ms ease, transform 200ms ease, background 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .repo-link:hover,
@@ -310,35 +320,207 @@ h2 {
   }
 }
 
-@media (max-width: 780px) {
+/* Tablet and smaller desktop devices */
+@media (max-width: 768px) {
   :root {
-    --skeleton-image-height: 150vh;
+    --skeleton-image-height: 140vh;
   }
 
   .skeleton-bg img {
     width: auto;
     height: var(--skeleton-image-height);
     top: 0;
-    opacity: 0.2;
+    opacity: 0.15;
   }
 
   .layout {
-    min-height: 94vh;
-    padding: 16px 14px 10px;
+    padding: 16px;
     border-radius: 20px;
+    max-height: calc(100dvh - 16px);
   }
 
   .topbar {
-    justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .site-logo {
+    height: clamp(80px, 10vw, 140px);
+  }
+
+  .hero {
+    margin-bottom: 20px;
   }
 
   .cards {
     grid-template-columns: 1fr;
-    margin-bottom: 14px;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .card {
-    min-height: 166px;
+    min-height: 150px;
+    border-radius: 14px;
+  }
+
+  .footer {
+    padding-top: 10px;
+  }
+
+  .footer-links {
+    gap: 6px;
+  }
+
+  .repo-link {
+    font-size: 0.7rem;
+    padding: 8px 12px;
+    min-height: 40px;
   }
 }
+
+/* Mobile phones - small screens */
+@media (max-width: 480px) {
+  :root {
+    --skeleton-image-height: 120vh;
+  }
+
+  .skeleton-bg img {
+    opacity: 0.1;
+  }
+
+  .layout {
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(15, 26, 30, 0.1);
+  }
+
+  .topbar {
+    margin-bottom: 8px;
+  }
+
+  .site-logo {
+    height: clamp(60px, 8vw, 100px);
+  }
+
+  .hero {
+    margin-bottom: 16px;
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin: 4px 0 8px;
+  }
+
+  .lead {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+  }
+
+  .cards {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    min-height: 140px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .card-label {
+    font-size: 0.65rem;
+  }
+
+  h2 {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin: 2px 0;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    right: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+
+  .footer {
+    padding-top: 8px;
+    margin-top: auto;
+  }
+
+  .footer-title {
+    font-size: 0.6rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-links {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .repo-link {
+    font-size: 0.65rem;
+    padding: 7px 10px;
+    min-height: 36px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .layout {
+    padding: 28px 36px 20px;
+  }
+
+  .topbar {
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .card {
+    min-height: 220px;
+    padding: 28px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .layout {
+    max-height: 100dvh;
+    padding: 8px 12px;
+  }
+
+  .hero {
+    margin-bottom: 8px;
+  }
+
+  .cards {
+    margin-bottom: 8px;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .footer {
+    padding-top: 6px;
+  }
+}
+
+/* Improve touch responsiveness */
+@media (hover: none) and (pointer: coarse) {
+  .card:active,
+  .repo-link:active {
+    transform: translateY(-3px);
+  }
+}
+
